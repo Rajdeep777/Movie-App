@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie App</title>
+    <link rel="stylesheet" href="css/tailwind.css" />
+  </head>
+  <body class="bg-gradient-to-r from-black via-red-950 to-black font-ubuntu">
+    <nav
+      class="fixed w-full z-10 bg-gradient-to-r from-black via-red-950 to-black pt-3"
+    >
+      <div class="px-10">
+        <div class="relative flex h-16 items-center justify-between">
+          <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <button
+              type="button"
+              class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-700 hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+              id="menu-toggle"
+            >
+              <span class="absolute -inset-0.5"></span>
+              <span class="sr-only">Open main menu</span>
+              <svg
+                class="block h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+              <svg
+                class="hidden h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                aria-hidden="true"
+                data-slot="icon"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M6 18 18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+          </div>
+          <div
+            class="mx-10 flex flex-1 items-center justify-center sm:justify-start"
+          >
+            <div class="flex flex-shrink-0 items-center">
+              <img class="h-12 w-12" src="assets/logo.png" alt="RDSCinemas" />
+            </div>
+            <div class="hidden sm:ml-4 sm:block">
+              <div class="flex space-x-4">
+                <a
+                  href="#"
+                  class="rounded-md px-4 mx-5 py-2 text-md font-medium text-white hover:bg-red-700 hover:text-white duration-300"
+                  aria-current="page"
+                  >Movies</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sm:hidden hidden" id="mobile-menu">
+        <div class="space-y-1 px-2 pb-3 pt-2">
+          <a
+            href="#"
+            class="block rounded-md px-9 py-2 text-base font-medium text-white"
+            aria-current="page"
+          >
+            Movies
+          </a>
+        </div>
+      </div>
+    </nav>
+    <div class="pt-24 flex flex-wrap flex-col items-center mx-24">
+      <div class="text-white font-extrabold text-5xl pb-4 tracking-wide">
+        Welcome to RDS Cinemas
+      </div>
+      <p
+        class="text-white text-md text-md tracking-wide underline underline-offset-4 pb-8"
+      >
+        Are you Excited to watch? Starts downloding the prime action movies
+      </p>
+      <div class="overflow-x-auto max-w-full">
+        <table
+          class="table text-white text-center text-nowrap border-separate border-spacing-4"
+        >
+          <thead>
+            <tr>
+              <th class="p-4">ID</th>
+              <th class="p-4">Name</th>
+              <th class="p-4">Year</th>
+              <th class="p-4">IMDB</th>
+              <th class="p-4">Genre</th>
+              <th class="p-4">Image</th>
+              <th class="p-4">Download</th>
+              <th class="p-4">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="p-4">1</td>
+              <td class="p-4">John Wick 4</td>
+              <td class="p-4">2023</td>
+              <td class="p-4">7.7/10</td>
+              <td class="p-4">Action, Crime, Thriller</td>
+              <td class="p-4">
+                <img
+                  src="assets/john-wick.jpg"
+                  alt="john-wick"
+                  class="min-w-40 h-52 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                />
+              </td>
+              <td class="p-4">
+                <div class="flex flex-col gap-5">
+                  <a
+                    href="https://drive.usercontent.google.com/download?id=12TJvmGHIWCdpPXeO7EocEaT6zBlRWV4z&export=download&authuser=4"
+                    class="bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-5 rounded-md inline-flex items-center"
+                  >
+                    <svg
+                      class="fill-current w-4 h-4 mr-2"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+                    </svg>
+                    <span class="text-center">3.6 GB - FHD</span>
+                  </a>
+                  <a
+                    href="https://drive.usercontent.google.com/download?id=1FiMoDAFi4SXwPbMYI4Tv33YxlqQ8vpq5&export=download&authuser=4"
+                    class="bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-5 rounded-md inline-flex items-center"
+                  >
+                    <svg
+                      class="fill-current w-4 h-4 mr-2"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+                    </svg>
+                    <span>34 GB - UHD</span>
+                  </a>
+                </div>
+              </td>
+              <td class="p-4">
+                <div class="flex flex-col gap-5">
+                  <button
+                    class="border border-1 border-gray-600 text-white font-bold py-3 px-5 rounded-md shadow-sm shadow-gray-600"
+                  >
+                    Delete
+                  </button>
+                  <button
+                    class="border border-1 border-gray-600 text-white font-bold py-3 px-5 rounded-md shadow-sm shadow-gray-600"
+                  >
+                    Update
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="p-4">2</td>
+              <td class="p-4">Extraction</td>
+              <td class="p-4">2020</td>
+              <td class="p-4">6.8/10</td>
+              <td class="p-4">Action, Thriller</td>
+              <td class="p-4">
+                <img
+                  src="assets/thor-hero.jpg"
+                  alt="thor"
+                  class="h-52 w-40 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                />
+              </td>
+              <td class="p-4">
+                <div class="flex flex-col gap-5">
+                  <a
+                    href="https://drive.usercontent.google.com/download?id=1vnS_G8Zwyb1BecePMGewscYKAkF26XYS&export=download&authuser=2"
+                    class="bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-5 rounded-md inline-flex items-center"
+                  >
+                    <svg
+                      class="fill-current w-4 h-4 mr-2"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+                    </svg>
+                    <span class="text-center">5.1 GB - FHD</span>
+                  </a>
+                </div>
+              </td>
+              <td class="p-4">
+                <div class="flex flex-col gap-5">
+                  <button
+                    class="border border-1 border-gray-600 text-white font-bold py-3 px-5 rounded-md shadow-sm shadow-gray-600"
+                  >
+                    Delete
+                  </button>
+                  <button
+                    class="border border-1 border-gray-600 text-white font-bold py-3 px-5 rounded-md shadow-sm shadow-gray-600"
+                  >
+                    Update
+                  </button>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td class="p-4">3</td>
+              <td class="p-4">Salaar: Part 1 - Ceasefire</td>
+              <td class="p-4">2023</td>
+              <td class="p-4">6.6/10</td>
+              <td class="p-4">Action, Thriller</td>
+              <td class="p-4">
+                <img
+                  src="assets/salaar.jpg"
+                  alt="john-wick"
+                  class="h-52 w-40 transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300"
+                />
+              </td>
+              <td class="p-4">
+                <div class="flex flex-col gap-5">
+                  <a
+                    href="https://drive.usercontent.google.com/download?id=1HlNLQj-F9ucFFseq3AF5_r68-O8N5OtJ&export=download&authuser=2"
+                    class="bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-5 rounded-md inline-flex items-center"
+                  >
+                    <svg
+                      class="fill-current w-4 h-4 mr-2"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+                    </svg>
+                    <span class="text-center">4.9 GB - FHD</span>
+                  </a>
+                  <a
+                    href="https://drive.usercontent.google.com/download?id=10fyUqt0BYPnMadGlSmPa-peqUhR-T3aK&export=download&authuser=2"
+                    class="bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-5 rounded-md inline-flex items-center"
+                  >
+                    <svg
+                      class="fill-current w-4 h-4 mr-2"
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 20 20"
+                    >
+                      <path d="M13 8V2H7v6H2l8 8 8-8h-5zM0 18h20v2H0v-2z" />
+                    </svg>
+                    <span>17 GB - UHD</span>
+                  </a>
+                </div>
+              </td>
+              <td class="p-4">
+                <div class="flex flex-col gap-5">
+                  <button
+                    class="border border-1 border-gray-600 text-white font-bold py-3 px-5 rounded-md shadow-sm shadow-gray-600"
+                  >
+                    Delete
+                  </button>
+                  <button
+                    class="border border-1 border-gray-600 text-white font-bold py-3 px-5 rounded-md shadow-sm shadow-gray-600"
+                  >
+                    Update
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <script src="js/index.js"></script>
+  </body>
+</html>
