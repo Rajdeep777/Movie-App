@@ -14,8 +14,8 @@ app.use(ejsLayout)
 app.use(express.urlencoded({extended : true}))
 app.use(express.static('public'))
 app.get('/', productController.getProducts)
-app.get('/new', productController.getAddForm)
-app.post('/', productController.addNewProduct)
+app.get('/new', productController.getAddProduct)
+app.post('/', productController.postAddProduct)
 app.listen(PORT, () => {
     console.log('Server is running on http://localhost:8000');
 })
