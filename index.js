@@ -10,8 +10,12 @@ app.set('views', path.join(path.resolve(), 'src', 'views'))
 const productController = new ProductController()
 // Middleware for rendering the layout
 app.use(ejsLayout)
+// Middleware for parsing form data
+app.use(express.urlencoded({extended : true}))
 app.use(express.static('public'))
 app.get('/', productController.getProducts)
+app.get('/new', productController.getAddForm)
+app.post('/', productController.addNewProduct)
 app.listen(PORT, () => {
     console.log('Server is running on http://localhost:8000');
 })

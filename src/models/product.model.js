@@ -14,6 +14,21 @@ class ProductModel {
   static get() {
     return products;
   }
+  static add(prodObj) {
+    const newProduct = new ProductModel(
+      products.length + 1,
+      prodObj.name,
+      prodObj.year,
+      prodObj.imdb,
+      prodObj.genre,
+      prodObj.imageUrl,
+      prodObj.fullhd,
+      prodObj.ultrahd,
+      prodObj.fullhdbtn,
+      prodObj.ultrahdbtn
+    )
+    products.push(newProduct)
+  }
 }
 
 const products = [
@@ -21,37 +36,37 @@ const products = [
     1,
     "John Wick 4",
     2023,
-    "7.7/10",
+    "7.7",
     "Action, Crime, Thriller",
     "https://image.tmdb.org/t/p/w185/vZloFAK7NmvMGKE7VkF5UHaz0I.jpg",
     "https://drive.usercontent.google.com/download?id=12TJvmGHIWCdpPXeO7EocEaT6zBlRWV4z&export=download&authuser=4",
     "https://drive.usercontent.google.com/download?id=1FiMoDAFi4SXwPbMYI4Tv33YxlqQ8vpq5&export=download&authuser=4",
-    '3.6 GB - FHD',
-    '34 GB - UHD'
+    '3.6',
+    '34'
   ),
   new ProductModel(
     2,
     "Extraction 2",
     2023,
-    "7/10",
+    "7",
     "Action, Thriller",
     "https://image.tmdb.org/t/p/w185/7gKI9hpEMcZUQpNgKrkDzJpbnNS.jpg",
     "https://drive.usercontent.google.com/download?id=1lRt9kKQJEoZqX36pEwmvWyV75JCdrEPy&export=download&authuser=2",
     'https://drive.usercontent.google.com/download?id=1pF59zVXW6bGEdjkKpX40r7H_vHhC9uKS&export=download&authuser=2',
-    '5.6 GB - FHD',
-    '18 GB - UHD'
+    '5.6',
+    '18'
   ),
   new ProductModel(
     3,
     "Salaar: Part 1 - Ceasefire",
     2023,
-    "6.6/10",
+    "6.6",
     "Action, Thriller",
     "https://image.tmdb.org/t/p/w185/vzzeYSh6QYyN9CcY0EmdZJvXH4l.jpg",
     "https://drive.usercontent.google.com/download?id=1HlNLQj-F9ucFFseq3AF5_r68-O8N5OtJ&export=download&authuser=2",
     "https://drive.usercontent.google.com/download?id=10fyUqt0BYPnMadGlSmPa-peqUhR-T3aK&export=download&authuser=2",
-    '4.9 GB - FHD',
-    '17 GB - UHD'
+    '4.9',
+    '17'
   ),
 ];
 export default ProductModel;
