@@ -18,7 +18,7 @@ class ProductController {
       errors.push('Name is required')
     }
     if (!genre || genre.trim() == '') {
-      errors.push('genre is required')
+      errors.push('Genre is required')
     }
     if (!year || year < 1950 || year > currYear) {
       errors.push('Year should be between 1950 to present year')
