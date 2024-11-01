@@ -1,46 +1,35 @@
-const validateRequest = (req, res, next) => {
-    // Validate data
-    const { name, year, imdb, genre, imageUrl, fullhd, ultrahd, fullhdbtn, ultrahdbtn} = req.body
-    let errors = []
-    let currYear = new Date().getFullYear()    
-    if (!name || name.trim() == '') {
-      errors.push('Name is required')
-    }
-    if (!genre || genre.trim() == '') {
-      errors.push('Genre is required')
-    }
-    if (!year || year < 1950 || year > currYear) {
-      errors.push('Year should be between 1950 to present year')
-    }
-    if (!imdb || parseFloat(imdb) < 1 || imdb > 10) {
-      errors.push('imdb must be between 1 to 10')
-    }
-    try {
-      const validUrl = new URL(imageUrl)
-    } catch (error) {
-      errors.push('Invalid image URL')
-    }
-    if (!fullhdbtn || parseFloat(fullhdbtn) < 1) {
-      errors.push('FHD Size must be a positive value')
-    }
-    if (!ultrahdbtn || parseFloat(ultrahdbtn) < 1) {
-      errors.push('UHD Size must be a positive value')
-    }
-    try {
-      const validUrl = new URL(fullhd)
-    } catch (error) {
-      errors.push('Invalid Full HD donwload link')
-    }
-    try {
-      const validUrl = new URL(ultrahd)
-    } catch (error) {
-      errors.push('Invalid Ultra HD donwload link')
-    }
-    if (errors.length > 0) {
-      return res.render('new-product', {
-        errorMessage: errors[0]
-      })
-    }
-    next()
-}
-export default validateRequest
+import { body, validationResult } from "express-validator";
+const validateRequest = async (req, res, next) => {
+  //1. Setup rules for validation
+  const rules = [
+    body("name").notEmpty().withMessage("Name is required"),
+    body("genre").notEmpty().withMessage("Genre is required"),
+    body("year")
+      .isInt({ min: 1950, max: new Date().getFullYear() })
+      .withMessage("Year must be between 1950 and the current year"),
+    body("imdb")
+      .isFloat({ min: 1, max: 10 })
+      .withMessage("IMDB rating must be between 1 and 10"),
+    body("imageUrl").isURL().withMessage("Invalid image URL"),
+    body("fullhdbtn")
+      .isFloat({ gt: 0 })
+      .withMessage("FHD size must be a positive value"),
+    body("ultrahdbtn")
+      .isFloat({ gt: 0 })
+      .withMessage("UHD size must be a positive value"),
+    body("fullhd").isURL().withMessage("Invalid Full HD download link"),
+    body("ultrahd").isURL().withMessage("Invalid Ultra HD download link"),
+  ];
+  //2. Run those rules
+  await Promise.all(rules.map((rule) => rule.run(req)));
+  //3. Check if there are any errors after running the rules
+  const validationErrors = validationResult(req);
+  //4. If errors, then return the error message
+  if (!validationErrors.isEmpty()) {
+    return res.render("new-product", {
+      errorMessage: validationErrors.array()[0].msg,
+    });
+  }
+  next();
+};
+export default validateRequest;
