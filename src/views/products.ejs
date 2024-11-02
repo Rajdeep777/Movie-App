@@ -75,12 +75,12 @@
             >
               Update
             </a>
-            <a
-              href="/delete-product/<%= product.id %>"
+            <button
+              onclick="deleteProduct('<%= product.id %>')"
               class="bg-red-700 hover:bg-red-800 text-white font-bold py-3 px-5 rounded-md inline-flex items-center"
             >
               Delete
-            </a>
+            </button>
           </div>
         </td>
       </tr>
