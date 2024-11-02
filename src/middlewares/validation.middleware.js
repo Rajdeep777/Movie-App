@@ -1,5 +1,5 @@
 import { body, validationResult } from "express-validator";
-const validateRequest = async (req, res, next) => {
+const validationMiddleware = async (req, res, next) => {
   //1. Setup rules for validation
   const rules = [
     body("name").notEmpty().withMessage("Name is required"),
@@ -32,4 +32,4 @@ const validateRequest = async (req, res, next) => {
   }
   next();
 };
-export default validateRequest;
+export default validationMiddleware;

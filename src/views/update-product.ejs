@@ -1,0 +1,177 @@
+<div class="text-white font-extrabold text-5xl pb-8 tracking-wide">
+  Update Movie
+</div>
+<form action="/update-product" method="post">
+  <% if(errorMessage) {%>
+    <div role="alert">
+      <div class="border-l-4 border-red-900 font-medium bg-red-200 w-full p-4 text-red-700">
+        <p><%= errorMessage %></p>
+      </div>
+    </div>
+  <% } %>
+  <div class="p-10 bg-gradient-to-r from-black via-transparent via-35% to-gray-950 to-100% mb-5 rounded-md">
+    <input type="hidden" id="id" name="id" value="<%= product.id %>">
+      <div class="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-6">
+        <div class="sm:col-span-full">
+          <label
+            for="name"
+            class="block text-md font-medium leading-6 text-white"
+            >Movie Name</label
+          >
+          <div class="mt-2">
+            <input
+              type="text"
+              name="name"
+              placeholder="John Wick"
+              id="name"           
+              class="p-3 block w-full rounded-md bg-transparent text-white py-1.5 shadow-sm ring-1 ring-inset ring-gray-500 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-md sm:leading-6"
+              value="<%=  product.name %>"
+            />
+          </div>
+        </div>
+        <div class="sm:col-span-full">
+          <label
+            for="genre"
+            class="block text-md font-medium leading-6 text-white"
+            >Genre</label
+          >
+          <div class="mt-2">
+            <input
+              type="text"
+              name="genre"
+              placeholder="Action, Crime, Thriller, ..."
+              id="genre"              
+              class="p-3 block w-full rounded-md bg-transparent border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-500 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-md sm:leading-6"
+              value="<%=  product.genre %>"
+            />
+          </div>
+        </div>
+        <div class="sm:col-span-3">
+          <label
+            for="year"
+            class="block text-md font-medium leading-6 text-white"
+            >Year</label
+          >
+          <div class="mt-2">
+            <input
+              type="text"
+              name="year"
+              placeholder="2024"
+              id="year"
+              class="p-3 block w-full rounded-md bg-transparent border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-500 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-md sm:leading-6"
+              value="<%=  product.year %>"
+            />
+          </div>
+        </div>
+        <div class="sm:col-span-3">
+          <label
+            for="imdb"
+            class="block text-md font-medium leading-6 text-white"
+            >IMDB</label
+          >
+          <div class="mt-2">
+            <input
+              type="text"
+              name="imdb"
+              placeholder="8.5"
+              id="imdb"              
+              class="p-3 block w-full rounded-md bg-transparent border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-500 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-md sm:leading-6"
+              value="<%=  product.imdb %>"
+            />
+          </div>
+        </div>
+        <div class="col-span-full">
+          <label
+            for="imageUrl"
+            class="block text-md font-medium leading-6 text-white"
+            >Image Url</label
+          >
+          <div class="mt-2">
+            <input
+              type="text"
+              name="imageUrl"
+              placeholder="https://image.abc.com/example.jpg"
+              id="imageUrl"            
+              class="p-3 block w-full rounded-md bg-transparent border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-500 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-md sm:leading-6"
+              value="<%=  product.imageUrl %>"
+            />
+          </div>
+        </div>
+        <div class="sm:col-span-3">
+          <label
+            for="fullhdbtn"
+            class="block text-md font-medium leading-6 text-white"
+            >FHD Size</label
+          >
+          <div class="mt-2">
+            <input
+              type="text"
+              name="fullhdbtn"
+              placeholder="3.5"
+              id="fullhdbtn"           
+              class="p-3 block w-full rounded-md bg-transparent border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-500 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-md sm:leading-6"
+              value="<%=  product.fullhdbtn %>"
+            />
+          </div>
+        </div>
+        <div class="sm:col-span-3">
+          <label
+            for="ultrahdbtn"
+            class="block text-md font-medium leading-6 text-white"
+            >UHD Size</label
+          >
+          <div class="mt-2">
+            <input
+              type="text"
+              name="ultrahdbtn"
+              placeholder="15"
+              id="ultrahdbtn"              
+              class="p-3 block w-full rounded-md bg-transparent border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-500 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-md sm:leading-6"
+              value="<%=  product.ultrahdbtn %>"
+            />
+          </div>
+        </div>
+        <div class="col-span-full">
+          <label
+            for="fullhd"
+            class="block text-md font-medium leading-6 text-white text-white"
+            >Full HD ( 1080p ) Link</label
+          >
+          <div class="mt-2">
+            <input
+              type="text"
+              name="fullhd"
+              id="fullhd"
+              class="p-3 block w-full rounded-md bg-transparent border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-500 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-md sm:leading-6"
+              value="<%=  product.fullhd %>"
+            />
+          </div>
+        </div>
+        <div class="col-span-full">
+          <label
+            for="ultrahd"
+            class="block text-md font-medium leading-6 text-white text-white"
+            >Ultra HD ( 2160p / 4K ) Link </label
+          >
+          <div class="mt-2">
+            <input
+              type="text"
+              name="ultrahd"
+              id="ultrahd"        
+              class="p-3 block w-full rounded-md bg-transparent border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-500 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-md sm:leading-6"
+              value="<%=  product.ultrahd %>"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="mt-7">
+        <button
+          type="submit"
+          class="rounded-md bg-red-700 px-4 py-2 text-md font-semibold text-white shadow-sm hover:bg-red-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+        >
+          Add Movie
+        </button>
+      </div>
+    </div>
+  </div>
+</form>
