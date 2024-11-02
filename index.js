@@ -19,6 +19,7 @@ app.get('/new', productController.getAddProduct)
 app.get('/update-product/:id', productController.getUpdateProductView)
 app.post('/', validationMiddleware, productController.postAddProduct)
 app.post('/update-product', validationMiddleware, productController.postUpdateProduct)
+app.get('/delete-product/:id', productController.deleteProduct)
 app.listen(PORT, () => {
     console.log('Server is running on http://localhost:8000');
 })

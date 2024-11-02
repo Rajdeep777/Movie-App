@@ -36,6 +36,10 @@ class ProductModel {
     const index = products.findIndex((prod) => prod.id == prodObj.id)
     products[index] = prodObj
   }
+  static delete(id) {
+    const index = products.findIndex((prod) => prod.id == id)
+    products.splice(index, 1)
+  }
 }
 
 const products = [
