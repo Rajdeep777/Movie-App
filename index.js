@@ -2,7 +2,7 @@ import express from 'express'
 import path from 'path'
 import ejsLayout from 'express-ejs-layouts'
 import ProductController from './src/controllers/product.controller.js'
-import validateRequest from './src/middlewares/validation.middleware.js'
+import validationMiddleware from './src/middlewares/validation.middleware.js'
 const app = express()
 const PORT = 8000
 // setup view engine
@@ -16,7 +16,9 @@ app.use(express.urlencoded({extended : true}))
 app.use(express.static('public'))
 app.get('/', productController.getProducts)
 app.get('/new', productController.getAddProduct)
-app.post('/', validateRequest, productController.postAddProduct)
+app.get('/update-product/:id', productController.getUpdateProductView)
+app.post('/', validationMiddleware, productController.postAddProduct)
+app.post('/update-product', validationMiddleware, productController.postUpdateProduct)
 app.listen(PORT, () => {
     console.log('Server is running on http://localhost:8000');
 })

@@ -29,6 +29,13 @@ class ProductModel {
     )
     products.push(newProduct)
   }
+  static getById(id) {
+    return products.find((prod) => prod.id == id)
+  }
+  static update(prodObj) {
+    const index = products.findIndex((prod) => prod.id == prodObj.id)
+    products[index] = prodObj
+  }
 }
 
 const products = [
