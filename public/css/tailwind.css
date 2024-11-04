@@ -474,10 +474,6 @@ video {
   margin-left: 2.5rem;
   margin-right: 2.5rem;
 }
-.mx-5{
-  margin-left: 1.25rem;
-  margin-right: 1.25rem;
-}
 .mx-7{
   margin-left: 1.75rem;
   margin-right: 1.75rem;
@@ -487,6 +483,9 @@ video {
 }
 .mr-2{
   margin-right: 0.5rem;
+}
+.mt-10{
+  margin-top: 2.5rem;
 }
 .mt-2{
   margin-top: 0.5rem;
@@ -577,6 +576,9 @@ video {
 .justify-between{
   justify-content: space-between;
 }
+.gap-2{
+  gap: 0.5rem;
+}
 .gap-5{
   gap: 1.25rem;
 }
@@ -660,6 +662,9 @@ video {
 }
 .p-10{
   padding: 2.5rem;
+}
+.p-12{
+  padding: 3rem;
 }
 .p-2{
   padding: 0.5rem;
@@ -878,14 +883,17 @@ video {
   .sm\:ml-0{
     margin-left: 0px;
   }
-  .sm\:ml-4{
-    margin-left: 1rem;
+  .sm\:ml-6{
+    margin-left: 1.5rem;
   }
   .sm\:block{
     display: block;
   }
   .sm\:hidden{
     display: none;
+  }
+  .sm\:grid-cols-12{
+    grid-template-columns: repeat(12, minmax(0, 1fr));
   }
   .sm\:grid-cols-6{
     grid-template-columns: repeat(6, minmax(0, 1fr));
