@@ -18,6 +18,7 @@ app.use(ejsLayout);
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
 app.get('/register', userController.getRegister)
+app.get('/login', userController.getLogin)
 app.get("/", productController.getProducts);
 app.get("/new", productController.getAddProduct);
 app.get("/update-product/:id", productController.getUpdateProductView);
