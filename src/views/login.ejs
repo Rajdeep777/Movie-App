@@ -1,7 +1,14 @@
-<div class="text-white font-extrabold text-5xl pb-8 tracking-wide">
-  Login
-</div>
-<form action="/" method="post">
+<div class="text-white font-extrabold text-5xl pb-8 tracking-wide">Login</div>
+<form action="/login" method="post">
+  <% if(errorMessage) {%>
+  <div role="alert">
+    <div
+      class="border-l-4 border-red-900 font-medium bg-red-200 w-full p-4 text-red-700"
+    >
+      <p><%= errorMessage %></p>
+    </div>
+  </div>
+  <% } %>
   <div
     class="p-12 bg-gradient-to-r from-black via-transparent via-35% to-gray-950 to-100% mb-5 rounded-md"
   >

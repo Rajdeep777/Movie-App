@@ -11,14 +11,16 @@ const PORT = 8000;
 app.set("view engine", "ejs");
 app.set("views", path.join(path.resolve(), "src", "views"));
 const productController = new ProductController();
-const userController = new UserController()
+const userController = new UserController();
 // Middleware for rendering the layout
 app.use(ejsLayout);
 // Middleware for parsing form data
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
-app.get('/register', userController.getRegister)
-app.get('/login', userController.getLogin)
+app.get("/register", userController.getRegister);
+app.get("/login", userController.getLogin);
+app.post("/register", userController.postRegister);
+app.post("/login", userController.postLogin);
 app.get("/", productController.getProducts);
 app.get("/new", productController.getAddProduct);
 app.get("/update-product/:id", productController.getUpdateProductView);
@@ -28,10 +30,7 @@ app.post(
   validationMiddleware,
   productController.postAddProduct
 );
-app.post(
-  "/update-product",
-  productController.postUpdateProduct
-);
+app.post("/update-product", productController.postUpdateProduct);
 app.post("/delete-product/:id", productController.deleteProduct);
 app.listen(PORT, () => {
   console.log("Server is running on http://localhost:8000");
