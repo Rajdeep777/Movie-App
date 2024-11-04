@@ -1,0 +1,52 @@
+<div class="text-white font-extrabold text-5xl pb-8 tracking-wide">
+  Login
+</div>
+<form action="/" method="post">
+  <div
+    class="p-12 bg-gradient-to-r from-black via-transparent via-35% to-gray-950 to-100% mb-5 rounded-md"
+  >
+    <div class="grid grid-cols-1 gap-x-8 gap-y-8 sm:grid-cols-12">
+      <div class="sm:col-span-full">
+        <label
+          for="email"
+          class="block text-md font-medium leading-6 text-white"
+          >Email</label
+        >
+        <div class="mt-2">
+          <input
+            type="email"
+            name="email"
+            placeholder="john@gmail.com"
+            id="email"
+            class="p-3 block w-full rounded-md bg-transparent border-0 py-1.5 text-white shadow-sm ring-1 ring-inset ring-gray-500 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-md sm:leading-6"
+            required
+          />
+        </div>
+      </div>
+      <div class="sm:col-span-full">
+        <label
+          for="password"
+          class="block text-md font-medium leading-6 text-white"
+          >Password</label
+        >
+        <div class="mt-2">
+          <input
+            type="name"
+            name="password"
+            id="password"
+            class="p-3 block w-full rounded-md bg-transparent text-white py-1.5 shadow-sm ring-1 ring-inset ring-gray-500 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-md sm:leading-6"
+            required
+          />
+        </div>
+      </div>
+    </div>
+    <div class="mt-10 text-center pb-4">
+      <button
+        type="submit"
+        class="rounded-md w-full bg-red-700 px-4 py-2 text-md font-semibold text-white shadow-sm hover:bg-red-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+      >
+        Login
+      </button>
+    </div>
+  </div>
+</form>
