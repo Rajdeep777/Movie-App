@@ -10,7 +10,9 @@ class ProductController {
     })
   }
   postAddProduct(req, res) {
-    ProductModel.add(req.body)
+    const { name, year, imdb, genre, fullhd, ultrahd, fullhdbtn, ultrahdbtn } = req.body
+    const imageUrl = 'assets/' + req.file.filename
+    ProductModel.add(name, year, imdb, genre, imageUrl, fullhd, ultrahd, fullhdbtn, ultrahdbtn)
     const products = ProductModel.get()
     return res.render('products', {products})
   }

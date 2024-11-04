@@ -10,7 +10,12 @@ const validationMiddleware = async (req, res, next) => {
     body("imdb")
       .isFloat({ min: 1, max: 10 })
       .withMessage("IMDB rating must be between 1 and 10"),
-    body("imageUrl").isURL().withMessage("Invalid image URL"),
+    body('imageUrl').custom((value, { req }) => {
+      if (!req.file) {
+        throw new Error('image is required')
+      }
+      return true
+    }),
     body("fullhdbtn")
       .isFloat({ gt: 0 })
       .withMessage("FHD size must be a positive value"),

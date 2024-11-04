@@ -14,18 +14,18 @@ class ProductModel {
   static get() {
     return products;
   }
-  static add(prodObj) {
+  static add(name, year, imdb, genre, imageUrl, fullhd, ultrahd, fullhdbtn, ultrahdbtn) {
     const newProduct = new ProductModel(
       products.length + 1,
-      prodObj.name,
-      prodObj.year,
-      prodObj.imdb,
-      prodObj.genre,
-      prodObj.imageUrl,
-      prodObj.fullhd,
-      prodObj.ultrahd,
-      prodObj.fullhdbtn,
-      prodObj.ultrahdbtn
+      name,
+      year,
+      imdb,
+      genre,
+      imageUrl,
+      fullhd,
+      ultrahd,
+      fullhdbtn,
+      ultrahdbtn
     )
     products.push(newProduct)
   }
