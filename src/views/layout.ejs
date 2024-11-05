@@ -81,26 +81,39 @@
                 >
               </div>
             </div>
-            <div class="hidden sm:ml-0 sm:block">
-              <div class="flex space-x-4">
-                <a
-                  href="/register"
-                  class="rounded-md px-3 py-2 text-md font-medium text-white hover:bg-red-700 hover:text-white duration-300"
-                  aria-current="page"
-                  >Register</a
-                >
+            <% if(locals.userEmail) { %>
+              <div class="hidden sm:ml-0 sm:block">
+                <div class="flex space-x-4">
+                  <a
+                    href="/logout"
+                    class="rounded-md px-3 py-2 text-md font-medium text-white hover:bg-red-700 hover:text-white duration-300"
+                    aria-current="page"
+                    >Logout</a
+                  >
+                </div>
               </div>
-            </div>
-            <div class="hidden sm:ml-0 sm:block">
-              <div class="flex space-x-4">
-                <a
-                  href="/login"
-                  class="rounded-md px-3 py-2 text-md font-medium text-white hover:bg-red-700 hover:text-white duration-300"
-                  aria-current="page"
-                  >Login</a
-                >
+            <%} else {%>
+              <div class="hidden sm:ml-0 sm:block">
+                <div class="flex space-x-4">
+                  <a
+                    href="/register"
+                    class="rounded-md px-3 py-2 text-md font-medium text-white hover:bg-red-700 hover:text-white duration-300"
+                    aria-current="page"
+                    >Register</a
+                  >
+                </div>
               </div>
-            </div>
+              <div class="hidden sm:ml-0 sm:block">
+                <div class="flex space-x-4">
+                  <a
+                    href="/login"
+                    class="rounded-md px-3 py-2 text-md font-medium text-white hover:bg-red-700 hover:text-white duration-300"
+                    aria-current="page"
+                    >Login</a
+                  >
+                </div>
+              </div>
+            <% } %>
           </div>
         </div>
       </div>
@@ -120,20 +133,30 @@
           >
             New Movies
           </a>
-          <a
-            href="/register"
+          <% if(locals.userEmail) {%>
+            <a
+            href="/Logout"
             class="block rounded-md px-5 py-2 text-base font-medium text-white"
             aria-current="page"
-          >
-            Register
-          </a>
-          <a
-            href="/Login"
-            class="block rounded-md px-5 py-2 text-base font-medium text-white"
-            aria-current="page"
-          >
-            Login
-          </a>
+            >
+              Logout
+            </a>
+          <%} else {%>
+            <a
+              href="/register"
+              class="block rounded-md px-5 py-2 text-base font-medium text-white"
+              aria-current="page"
+            >
+              Register
+            </a>
+            <a
+              href="/Login"
+              class="block rounded-md px-5 py-2 text-base font-medium text-white"
+              aria-current="page"
+            >
+              Login
+            </a>
+          <% } %>
         </div>
       </div>
     </nav>
