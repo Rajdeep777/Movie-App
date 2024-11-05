@@ -7,6 +7,8 @@ import { uploadFile } from "./src/middlewares/file-upload.middleware.js";
 import UserController from "./src/controllers/user.controller.js";
 import session from "express-session";
 import auth from "./src/middlewares/auth.middleware.js";
+import cookieParser from 'cookie-parser'
+import setLastVisit from "./src/middlewares/lastVisit.middleware.js";
 const app = express();
 const PORT = 8000;
 // setup view engine
@@ -19,6 +21,8 @@ app.use(ejsLayout);
 // Middleware for parsing form data
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));
+app.use(cookieParser())
+app.use(setLastVisit)
 app.use(
   session({
     secret: "SecretKey",

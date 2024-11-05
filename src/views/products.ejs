@@ -1,4 +1,9 @@
-<div class="text-white font-extrabold text-5xl pb-4 tracking-wide">
+<% if(locals.lastVisit) { %>
+  <div class="bg-blue-100 border-t border-b border-blue-500 text-blue-700 px-4 py-1 w-full text-center" role="alert">
+    <p class="text-sm">Your last visit was on : <%= locals.lastVisit %></p>
+  </div>
+<% } %>
+<div class="pt-10 text-white font-extrabold text-5xl pb-4 tracking-wide">
   Welcome to RDS Cinemas
 </div>
 <p
