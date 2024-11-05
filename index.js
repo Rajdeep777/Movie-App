@@ -31,6 +31,7 @@ app.get("/register", userController.getRegister);
 app.get("/login", userController.getLogin);
 app.post("/register", userController.postRegister);
 app.post("/login", userController.postLogin);
+app.get('/logout', userController.logout)
 app.get("/", auth, productController.getProducts);
 app.get("/new", auth, productController.getAddProduct);
 app.get("/update-product/:id", auth, productController.getUpdateProductView);
