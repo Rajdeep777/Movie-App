@@ -2,11 +2,12 @@ import ProductModel from "../models/product.model.js";
 class ProductController {
   getProducts(req, res) {
     const products = ProductModel.get()
-    res.render('products', {products:products})
+    res.render('products', {products, userEmail: req.session.userEmail})
   }
   getAddProduct(req, res) {
     return res.render('new-product', {
-      errorMessage: null
+      errorMessage: null,
+      userEmail: req.session.userEmail
     })
   }
   postAddProduct(req, res) {
@@ -14,7 +15,7 @@ class ProductController {
     const imageUrl = 'assets/' + req.file.filename
     ProductModel.add(name, year, imdb, genre, imageUrl, fullhd, ultrahd, fullhdbtn, ultrahdbtn)
     const products = ProductModel.get()
-    return res.render('products', {products})
+    return res.render('products', {products, userEmail: req.session.userEmail})
   }
   getUpdateProductView(req, res) {
     //1. If product exists then return view
@@ -23,7 +24,8 @@ class ProductController {
     if (productFound) {
       res.render('update-product', {
         product: productFound,
-        errorMessage: null
+        errorMessage: null,
+        userEmail: req.session.userEmail
       })
     }
     //2. else return errors

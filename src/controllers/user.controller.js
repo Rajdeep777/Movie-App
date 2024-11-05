@@ -22,7 +22,18 @@ class UserController {
     }
     req.session.userEmail = email;
     const products = ProductModel.get();
-    res.render("products", { products: products });
+    res.render("products", { products, userEmail: req.session.userEmail });
+  }
+  logout(req, res) {
+    //On logout, destroy the session
+    req.session.destroy((err) => {
+      if (err) {
+        console.log(err);
+      }
+      else {
+        res.redirect('/login')
+      }
+    })
   }
 }
 export default UserController;
