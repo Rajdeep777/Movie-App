@@ -20,6 +20,7 @@ class UserController {
         errorMessage: "Invalid Credentials",
       });
     }
+    req.session.userEmail = email;
     const products = ProductModel.get();
     res.render("products", { products: products });
   }
