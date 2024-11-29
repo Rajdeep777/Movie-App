@@ -1,5 +1,6 @@
 import express from "express";
 import path from "path";
+import dotenv from 'dotenv'
 import ejsLayout from "express-ejs-layouts";
 import ProductController from "./src/controllers/product.controller.js";
 import validationMiddleware from "./src/middlewares/validation.middleware.js";
@@ -9,8 +10,9 @@ import session from "express-session";
 import auth from "./src/middlewares/auth.middleware.js";
 import cookieParser from "cookie-parser";
 import setLastVisit from "./src/middlewares/lastVisit.middleware.js";
+dotenv.config()
 const app = express();
-const PORT = 8000;
+const PORT = process.env.PORT;
 // setup view engine
 app.set("view engine", "ejs");
 app.set("views", path.join(path.resolve(), "src", "views"));
@@ -48,5 +50,5 @@ app.post(
 app.post("/update-product", auth, productController.postUpdateProduct);
 app.post("/delete-product/:id", auth, productController.deleteProduct);
 app.listen(PORT, () => {
-  console.log("Server is running on http://localhost:8000");
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
